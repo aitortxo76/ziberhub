@@ -1,0 +1,14 @@
+---
+myname: mui.ziberhub.eus
+egress_if: "vio0"
+interconnect_interface: "vio2"
+db_host: "172.24.0.253"
+db_name: "echoCTF"
+db_user: "vpnuser"
+db_pass: "vpnuserpass"
+mui_ext_ip: "192.168.122.130"
+db_ip: "172.24.0.253"
+GITHUB_OAUTH_TOKEN: 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
+GITHUB_REPO: git@github.com:proditis/ziberhub.eus.git
+domain_name: "mui.ziberhub.eus"
+mui_ip: "172.24.0.201"
