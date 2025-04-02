@@ -508,7 +508,7 @@
     - { cmd: "{{APP_DIR}}/backend/yii migrate --interactive=0" }
     - { cmd: "{{APP_DIR}}/backend/yii init_data --interactive=0" }
     - { cmd: "{{APP_DIR}}/backend/yii migrate-sales --interactive=0" }
-#    - { cmd: "{{APP_DIR}}/backend/yii migrate-red --migrationPath=@app/../migrations --interactive=0" }
+    - { cmd: "{{APP_DIR}}/backend/yii migrate-red --migrationPath=@app/../migrations --interactive=0" }
     - { cmd: "{{APP_DIR}}/backend/yii ssl/create-ca 1", creates: "/etc/openvpn/private/echoCTF-OVPN-CA.key", chdir: "/etc/openvpn/private" }
     - { cmd: '{{APP_DIR}}/backend/yii ssl/create-cert "VPN Server"', creates: "/etc/openvpn/private/VPN Server.key", chdir: "/etc/openvpn/private" }
     - { cmd: "{{APP_DIR}}/backend/yii ssl/create-crl", creates: "/etc/openvpn/crl.pem" }
