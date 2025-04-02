@@ -1,5 +1,5 @@
-hostname: pui.mydomain
-offense_domain: pui.mydomain
+hostname: pui.ziberhub.eus
+offense_domain: ziberhub.eus
 backups:
   - { tgz: "/altroot/root.tgz", src: '/root' }
   - { tgz: "/altroot/etc.tgz", src: '/etc'  }

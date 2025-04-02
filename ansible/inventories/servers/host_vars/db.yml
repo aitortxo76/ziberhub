@@ -1,4 +1,4 @@
-hostname: db.mydomain
+hostname: db.ziberhub.eus
 backups:
   - { tgz: "/altroot/root.tgz", src: '/root' }
   - { tgz: "/altroot/etc.tgz", src: '/etc'  }
