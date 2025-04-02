@@ -1,0 +1,208 @@
+{
+    "name": "echoctf/echoctf.red",
+    "description": "echoCTF Participant UI",
+    "keywords": ["echoctf"],
+    "homepage": "https://www.echoctf.com/",
+    "type": "project",
+    "license": "BSD-3-Clause",
+    "support": {
+        "issues": "https://github.com/echoCTF/echoCTF.RED/issues?state=open",
+        "source": "https://github.com/echoCTF/echoCTF.RED"
+    },
+    "minimum-stability": "stable",
+    "require": {
+        "php": ">=8.0.0",
+        "yiisoft/yii2": "2.0.50",
+        "yiisoft/yii2-bootstrap": "~2.0.11",
+        "yiisoft/yii2-bootstrap4": "^2.0.11",
+        "overals/yii2-whois": "~1.0.2",
+        "stripe/stripe-php": "^16.4",
+        "yiisoft/yii2-symfonymailer": "^4.0.0",
+        "yzalis/identicon": "^2.0"
+    },
+    "config": {
+        "platform-check": false,
+        "process-timeout": 1800,
+        "fxp-asset": {
+            "enabled": false
+        },
+        "allow-plugins": {
+            "yiisoft/yii2-composer": true
+        }
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "yii\\composer\\Installer::postInstall"
+        ],
+        "post-create-project-cmd": [
+            "yii\\composer\\Installer::postCreateProject",
+            "yii\\composer\\Installer::postInstall"
+        ]
+    },
+    "extra": {
+        "yii\\composer\\Installer::postCreateProject": {
+            "setPermission": [
+                {
+                    "runtime": "0777",
+                    "web/assets": "0777",
+                    "yii": "0755"
+                }
+            ]
+        },
+        "yii\\composer\\Installer::postInstall": {
+            "generateCookieValidationKey": [
+                "config/web.php"
+            ]
+        }
+    },
+    "repositories": [
+        {
+            "type": "composer",
+            "url": "https://packagist.org"
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "bower-asset/jquery",
+                "version": "3.6.0",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:jquery/jquery-dist.git",
+                    "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/jquery/jquery-dist/zipball/e786e3d9707ffd9b0dd330ca135b66344dcef85a",
+                    "reference": "e786e3d9707ffd9b0dd330ca135b66344dcef85a"
+                },
+                "type": "bower-asset",
+                "license": [
+                    "MIT"
+                ]
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "yiisoft/yii2",
+                "version": "2.0.45",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/yiisoft/yii2-framework.git",
+                    "reference": "e2223d4085e5612aa616635f8fcaf478607f62e8"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/e2223d4085e5612aa616635f8fcaf478607f62e8",
+                    "reference": "e2223d4085e5612aa616635f8fcaf478607f62e8",
+                    "shasum": ""
+                }
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "bower-asset/inputmask",
+                "version": "5.0.9",
+                "source": {
+                    "type": "git",
+                    "url": "git@github.com:RobinHerbots/Inputmask.git",
+                    "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/RobinHerbots/Inputmask/zipball/310a33557e2944daf86d5946a5e8c82b9118f8f7",
+                    "reference": "310a33557e2944daf86d5946a5e8c82b9118f8f7"
+                },
+                "require": {
+                    "bower-asset/jquery": ">=1.7"
+                },
+                "type": "bower-asset",
+                "license": [
+                    "http://opensource.org/licenses/mit-license.php"
+                ]
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "bower-asset/punycode",
+                "version": "v2.3.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/mathiasbynens/punycode.js.git",
+                    "reference": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/mathiasbynens/punycode.js/zipball/9e1b2cda98d215d3a73fcbfe93c62e021f4ba768",
+                    "reference": "9e1b2cda98d215d3a73fcbfe93c62e021f4ba768"
+                },
+                "type": "bower-asset"
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "bower-asset/yii2-pjax",
+                "version": "2.0.7.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/yiisoft/jquery-pjax.git",
+                    "reference": "aef7b953107264f00234902a3880eb50dafc48be"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/yiisoft/jquery-pjax/zipball/aef7b953107264f00234902a3880eb50dafc48be",
+                    "reference": "aef7b953107264f00234902a3880eb50dafc48be"
+                },
+                "require": {
+                    "bower-asset/jquery": ">=1.8"
+                },
+                "type": "bower-asset",
+                "license": [
+                    "MIT"
+                ]
+            }
+        },
+        {
+            "type": "package",
+            "package": {
+                "name": "bower-asset/bootstrap",
+                "version": "v3.4.1",
+                "source": {
+                    "type": "git",
+                    "url": "https://github.com/twbs/bootstrap.git",
+                    "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
+                },
+                "dist": {
+                    "type": "zip",
+                    "url": "https://api.github.com/repos/twbs/bootstrap/zipball/68b0d231a13201eb14acd3dc84e51543d16e5f7e",
+                    "reference": "68b0d231a13201eb14acd3dc84e51543d16e5f7e"
+                },
+                "require": {
+                    "bower-asset/jquery": ">=1.9.1,<4.0"
+                },
+                "type": "bower-asset",
+                "license": [
+                    "MIT"
+                ]
+            }
+        },
+        {
+            "type": "package",
+            "package":{
+                "name": "npm-asset/bootstrap",
+                "version": "4.6.1",
+                "dist": {
+                    "type": "tar",
+                    "url": "https://registry.npmjs.org/bootstrap/-/bootstrap-4.6.1.tgz"
+                },
+                "type": "npm-asset",
+                "license": [
+                    "MIT"
+                ]
+            }
+        }
+    ]
+}
