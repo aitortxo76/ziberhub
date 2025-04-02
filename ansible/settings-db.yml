@@ -1,0 +1,13 @@
+---
+myname: db.ziberhub.eus
+egress_if: "vio0"
+interconnect_interface: "vio2"
+db_host: "172.24.0.253"
+db_name: "echoCTF"
+db_user: "vpnuser"
+db_pass: "vpnuserpass"
+db_ip:  "172.24.0.253"
+pui_ip: "172.24.0.200"
+mui_ip: "172.24.0.201"
+vpn_ip: "172.24.0.254"
+GITHUB_REPO: git@github.com:proditis/ziberhub.eus.git
