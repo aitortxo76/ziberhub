@@ -37,8 +37,8 @@
       PHP_MINOR: "12"
       AUTOCONF: "2.69"
       AUTOMAKE: "1.16"
-      ICU_MAJOR: 75
-      ICU_MINOR: 1
+      ICU_MAJOR: 74
+      ICU_MINOR: 2
     sysctl:
       kern.bufcachepercent: 30
       net.inet.ip.ifq.maxlen: 2560
@@ -215,6 +215,7 @@
       clone: yes
       force: yes
       depth: 1
+      version: "{{ GITHUB_REPO_BRANCH | default('main') }}"
 
   - name: Fix CHROOT environment for moderatorUI
     file: path=/home/moderatorUI/{{item}} mode=0755 state=directory
