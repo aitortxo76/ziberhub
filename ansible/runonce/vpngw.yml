@@ -92,8 +92,8 @@
       PHP_MINOR: "12"
       AUTOCONF: "2.69"
       AUTOMAKE: "1.16"
-      ICU_MAJOR: 75
-      ICU_MINOR: 1
+      ICU_MAJOR: 74
+      ICU_MINOR: 2
     sysctl:
       kern.bufcachepercent: 30
       kern.maxfiles: 312180
@@ -295,6 +295,7 @@
       clone: yes
       force: yes
       depth: 1
+      version: "{{ GITHUB_REPO_BRANCH | default('main') }}"
 
 
   - name: Clone memcached udf repo
