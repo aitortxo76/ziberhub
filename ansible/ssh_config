@@ -1,0 +1,47 @@
+# Add the following line into your ~/.ssh/config replacing
+# the path to your local one.
+#Include /home/databus/git/brctf-v2/ansible/ssh_config
+
+Host *.ziberhub *.ziberhub.eus
+  ServerAliveInterval 15
+
+Host mui.ziberhub mui.ziberhub.eus 10.2.11.210
+  StrictHostKeyChecking no
+  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
+  Hostname 10.2.11.210
+  User root
+  ForwardAgent yes
+
+Host registry.ziberhub registry.ziberhub.eus 216.238.88.36
+  StrictHostKeyChecking no
+  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
+  Hostname 216.238.88.36
+  User root
+  ForwardAgent yes
+
+Host db.ziberhub db.ziberhub.eus 10.2.234.226
+  StrictHostKeyChecking no
+  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
+  Hostname 10.2.234.226
+  User root
+  ForwardAgent yes
+
+Host vpn.ziberhub vpn.ziberhub.eus 10.2.225.218
+  StrictHostKeyChecking no
+  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
+  Hostname 10.2.225.218
+  User root
+  ForwardAgent yes
+
+Host ctf.ziberhub ctf.ziberhub.eus pui.ziberhub pui.ziberhub.eus 10.2.101.89
+  StrictHostKeyChecking no
+  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
+  Hostname 10.2.101.89
+  User root
+  ForwardAgent yes
+
+Host docker01.ziberhub docker01.ziberhub.eus
+  Hostname docker01.ziberhub
+  User root
+  ForwardAgent yes
+  ProxyCommand ssh vpn.ziberhub.eus -W 10.0.0.1:%p
