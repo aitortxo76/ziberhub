@@ -58,41 +58,8 @@ function init() {
 
 function sysconfig() {
   declare -A SYSCONFIG
-  SYSCONFIG[profile_visibility]="private"
-  SYSCONFIG[default_homepage]="/dashboard"
-  SYSCONFIG[approved_avatar]="1"
-  SYSCONFIG[mail_useFileTransport]="1"
-  SYSCONFIG[vpngw]="vpn.ZiberHub.eus"
-  SYSCONFIG[event_active]="1"
-  SYSCONFIG[twitter_hashtags]="ZiberHub,FPTXURDINAGA,CTF"
-  SYSCONFIG[twitter_account]="ZiberHub.eus"
-  SYSCONFIG[members_per_team]="3"
-  SYSCONFIG[challenge_home]="uploads/"
-  SYSCONFIG[dashboard_is_home]="1"
-  SYSCONFIG[defense_registered_tag]="DEFENSE_REGISTERED"
-  SYSCONFIG[disable_registration]="0"
-  SYSCONFIG[offense_registered_tag]="OFFENSE_REGISTERED"
-  SYSCONFIG[online_timeout]="900"
-  SYSCONFIG[player_profile]="1"
-  SYSCONFIG[require_activation]="1"
-  SYSCONFIG[spins_per_day]="70"
-  SYSCONFIG[teams]="1"
-  SYSCONFIG[members_per_team]="3"
-  SYSCONFIG[mail_from]="register@ZiberHub.eus"
-  SYSCONFIG[mail_fromName]="ZiberHub.eus CTF"
-  SYSCONFIG[mail_host]="smtp.gmail.com"
-  SYSCONFIG[mail_port]="25"
-  SYSCONFIG[mail_username]="register@ZiberHub.eus"
-  SYSCONFIG[mail_password]=""
-  SYSCONFIG[offense_domain]="ctf.ZiberHub.eus"
-  SYSCONFIG[frontpage_scenario]="ZiberHub.eus CTF"
-  SYSCONFIG[event_name]="ZiberHub CTF"
-  SYSCONFIG[footer_logos]=''
-  SYSCONFIG[dn_countryName]='ES'
-  SYSCONFIG[dn_localityName]='Bilbao'
-  SYSCONFIG[dn_organizationalUnitName]='ZiberHub.eus'
-  SYSCONFIG[dn_organizationName]='echoCTF'
-  SYSCONFIG[dn_stateOrProvinceName]='Spain'
+  SYSCONFIG[moderator_domain]="127.0.0.1:8080"
+  SYSCONFIG[offense_domain]="127.0.0.1:8082"
   for K in "${!SYSCONFIG[@]}"; do
     ./backend/yii sysconfig/set $K "${SYSCONFIG[$K]}"
   done
