@@ -1,8 +1,8 @@
 [all]
-vpn
-mui
-pui
-db
+vpn ansible_host=vpn.ziberhub.eus
+mui ansible_host=mui.ziberhub.eus
+pui ansible_host=ctf.ziberhub.eus
+db ansible_host=db.ziberhub.eus
 
 [vpn]
 vpn
