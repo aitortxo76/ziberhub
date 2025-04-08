@@ -1,0 +1,16 @@
+---
+ansible_user: root
+domain: ziberhub.eus
+ipv4: 10.4.0.1
+fqdn: docker01.ziberhub.eus
+host_aliases: "docker"
+
+network:
+  name: AAnet
+  driver: macvlan
+  driver_options:
+    parent: enp3s0
+  ipam_options:
+   - subnet: '10.4.0.0/16'
+     gateway: 10.4.0.254
+     iprange: '10.4.1.0/24'

@@ -41,7 +41,7 @@ Host ctf.ziberhub ctf.ziberhub.eus pui.ziberhub pui.ziberhub.eus 10.2.101.89
   ForwardAgent yes
 
 Host docker01.ziberhub docker01.ziberhub.eus
-  Hostname docker01.ziberhub
+  Hostname 10.2.64.171
   User root
   ForwardAgent yes
-  ProxyCommand ssh vpn.ziberhub.eus -W 10.0.0.1:%p
+  #ProxyCommand ssh vpn.ziberhub.eus -W 10.4.0.1:%p
