@@ -538,7 +538,7 @@
       dest: "{{item.dest}}"
       content: "{{item.val}}\n"
     with_items:
-      - { dest: "/etc/registry_clients.conf", val: "10.0.0.0/24"}
+      - { dest: "/etc/registry_clients.conf", val: "10.4.0.0/24"}
 
   - name: "Create targets network interface hostname.{{targets_if}}"
     copy:
