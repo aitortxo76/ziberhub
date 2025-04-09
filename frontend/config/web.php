@@ -125,7 +125,7 @@ $config = [
           'sourcePath' => null,
           'css' => [],
         ],
-        'app\assets\MaterialAsset' => [
+        'app\assets\ZiberhubAsset' => [
           'siteTitle' => '',
           'logoMini' => '/images/logo-small.png',
           'sidebarColor' => 'echoctf',
@@ -136,11 +136,11 @@ $config = [
     'view' => [
       'class' => 'app\components\echoCTFView',
       'theme' => [
-        'basePath' => '@app/themes/material',
-        'baseUrl' => '@web/themes/material',
+        'basePath' => '@app/themes/ziberhub',
+        'baseUrl' => '@web/themes/ziberhub',
         'pathMap' => [
-          '@app/views' => '@app/themes/material',
-          '@app/modules' => '@app/themes/material/modules',
+          '@app/views' => '@app/themes/ziberhub',
+          '@app/modules' => '@app/themes/ziberhub/modules',
         ],
       ],
     ],
