@@ -12,13 +12,6 @@ Host mui.ziberhub mui.ziberhub.eus 10.2.11.210
   User root
   ForwardAgent yes
 
-Host registry.ziberhub registry.ziberhub.eus 216.238.88.36
-  StrictHostKeyChecking no
-  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
-  Hostname 216.238.88.36
-  User root
-  ForwardAgent yes
-
 Host db.ziberhub db.ziberhub.eus 10.2.234.226
   StrictHostKeyChecking no
   UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
@@ -33,7 +26,7 @@ Host vpn.ziberhub vpn.ziberhub.eus 10.2.225.218
   User root
   ForwardAgent yes
 
-Host ctf.ziberhub ctf.ziberhub.eus pui.ziberhub pui.ziberhub.eus 10.2.101.89
+Host ziberhub ctf.ziberhub ctf.ziberhub.eus pui.ziberhub pui.ziberhub.eus 10.2.101.89
   StrictHostKeyChecking no
   UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
   Hostname 10.2.101.89
@@ -45,3 +38,17 @@ Host docker01.ziberhub docker01.ziberhub.eus
   User root
   ForwardAgent yes
   #ProxyCommand ssh vpn.ziberhub.eus -W 10.4.0.1:%p
+
+Host player.ziberhub playermachine.ziberhub playermachine.ziberhub.eus 10.2.162.138
+  StrictHostKeyChecking no
+  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
+  Hostname 10.2.162.138
+  User ziberhub
+  ForwardAgent no
+
+Host registry.ziberhub registry.ziberhub.eus 216.238.88.36
+  StrictHostKeyChecking no
+  UserKnownHostsFile ~/.ssh/ziberhub2024_known_hosts
+  Hostname 216.238.88.36
+  User root
+  ForwardAgent yes
