@@ -46,6 +46,7 @@ class m220623_104325_system_settings extends Migration
       ['id'=>'profile_discord','val'=>"1"],
       ['id'=>'profile_echoctf','val'=>"1"],
       ['id'=>'profile_github','val'=>"1"],
+      ['id'=>'module_smartcity_disabled','val'=>"1"],
       ['id'=>'time_zone', 'val'=>'Europe/Madrid'],
       ['id'=>'profile_settings_fields','val'=>'avatar,bio,country,discord,echoctf,email,fullname,github,pending_progress,twitter,username,visibility'],
       ['id'=>'pf_state_limits','val'=>'(max 10000, source-track rule, max-src-nodes 5, max-src-states 2000, max-src-conn 50)'],
