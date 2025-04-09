@@ -136,6 +136,18 @@
       - "inet {{mui_ip}} 255.255.255.0 NONE group interconnect"
       - "up -inet6"
 
+  - name: Configure targets interface
+    lineinfile:
+      path: "/etc/hostname.{{targets_interface}}"
+      owner: root
+      group: wheel
+      mode: '0640'
+      line: "{{item}}"
+      create: yes
+    with_items:
+      - "inet {{targets_ip}} 255.255.255.0 NONE group targets"
+      - "up -inet6"
+
   - name: Bring interface up
     command: sh /etc/netstart {{interconnect_interface}}
 

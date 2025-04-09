@@ -12,3 +12,5 @@ GITHUB_OAUTH_TOKEN: github_pat_11ABBLZ6A0rbv1xiI17m4t_zETdqsGl7RWVNN1k9gfmE3EdkG
 GITHUB_REPO: git@github.com:proditis/ziberhub.eus.git
 domain_name: "mui.ziberhub.eus"
 mui_ip: "172.24.0.201"
+targets_interface: "vio3"
+targets_ip: "10.4.0.201"
