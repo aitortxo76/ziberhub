@@ -59,8 +59,8 @@ pip:
 etchosts: |
   127.0.0.1       localhost
   {{ipv4}}        {{fqdn}}    {{host_aliases}}
-  10.4.0.254      gw
-  10.4.0.100      registry.hackmex.mx
+  10.4.0.254      gw vpn.ziberhub.eus registry.ziberhub.eus vpn
+  10.4.0.100
 
 SYSTEM_CLEANUPS:
   - /root/setup_16.x
