@@ -18,7 +18,8 @@
         "overals/yii2-whois": "~1.0.2",
         "stripe/stripe-php": "^16.4",
         "yiisoft/yii2-symfonymailer": "^4.0.0",
-        "yzalis/identicon": "^2.0"
+        "yzalis/identicon": "^2.0",
+        "symfony/google-mailer": "^6.4"
     },
     "config": {
         "platform-check": false,
