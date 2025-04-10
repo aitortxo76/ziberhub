@@ -125,9 +125,9 @@ $config = [
           'sourcePath' => null,
           'css' => [],
         ],
-        'app\assets\ZiberhubAsset' => [
-          'siteTitle' => '',
-          'logoMini' => '/images/logo-small.png',
+        'app\assets\MaterialAsset' => [
+          'siteTitle' => 'ZiberHub',
+          'logoMini' => '/images/ZIBERH4B.png',
           'sidebarColor' => 'echoctf',
           'sidebarBackgroundColor' => 'black',
         ],
