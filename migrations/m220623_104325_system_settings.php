@@ -40,7 +40,7 @@ class m220623_104325_system_settings extends Migration
       ['id'=>"twitter_hashtags",'val'=>"ZiberHub,CTF"],
       ['id'=>"vpngw",'val'=>"vpn.ziberhub.eus"],
       ['id'=>'all_players_vip','val'=>"1"],
-      ['id'=>'player_require_approval','val'=>"0"],
+      ['id'=>'player_require_approval','val'=>"1"],
       ['id'=>'team_visible_instances','val'=>"1"],
       ['id'=>'hide_timezone','val'=>"1"],
       ['id'=>'profile_discord','val'=>"1"],
