@@ -1,1 +1,11 @@
+[targets:vars]
+DOCKER="10.4.0.1"
+TargetOndemand=1
+DOCKER_REPOSITORY=demo
+writeup_allowed=0
+headshot_spin=0
+player_spin=0
+healthcheck=0
+
 [targets]
+sanitycheck			ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
