@@ -1,0 +1,91 @@
+---
+hostname: "{{inventory_hostname}}"
+fqdn: "{{inventory_hostname}}.ziberhub.eus"
+rootable: 0
+difficulty: 2
+container:
+  name: "{{inventory_hostname}}"
+  hostname: "{{fqdn}}"
+  build: "unholy_union"
+  image: "{{inventory_hostname}}"
+  state: "started"
+  mac_address: "{{mac|default(omit)}}"
+  purge_networks: "yes"
+  tag: "v0.1"
+  dns_servers:
+    - "10.4.0.254"
+  env:
+    DYNAMIC_FLAG: "ETSCTF_{{DYNAMIC_FLAG|default(omit)}}"
+  networks:
+    - { name: AAnet, ipv4_address: "{{ansible_host}}" }
+  volumes: []
+CVE: []
+
+
+ETSCTF_FINDINGS:
+  - {
+      name: "Discovered target host {{fqdn}}/{{ansible_host}}",
+      pubname: "Discovered a target host",
+      points: 100,
+      stock: -1,
+      protocol: "icmp",
+      port: 0
+    }
+  - {
+      name: "Discovered a web service on target {{fqdn}}/{{ansible_host}}",
+      pubname: "Discovered a target host",
+      points: 100,
+      stock: -1,
+      protocol: "tcp",
+      port: 80
+    }
+
+ETSCTF_TREASURES:
+  - { #4
+      name: "Discovered the SQL flag",
+      pubname: "Discovered the SQL flag",
+      points: 100,
+      player_type: offense,
+      stock: -1,
+      code: "{{DYNAMIC_FLAG|default(omit)}}",
+      replace: "ETSCTF_FLAG_PLACEHOLDER",
+      file: "/tmp/schema.sql",
+    }
+
+INI_FILES:
+  - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", section: "mysqld", option: init_file, value: "/etc/mysql_init.sql"}
+BUILD_COMMANDS:
+  exec:
+  - { cmd: "mysql < /tmp/schema.sql" }
+#  replace:
+#  - { #1
+#      pattern: "TEMPLATE_VARIABLE",
+#      file: "/tmp/init.sh",
+#      value: "{{fqdn}}",
+#    }
+
+DETAILS:
+#  - { username: "ETSCTF", password: "ETSCTF_{{ETSCTF_SHADOW_FLAG}}", gecos: "ETSCTF_{{ETSCTF_PASSWD_FLAG}}", group: "nogroup", module: 'user' }
+
+
+purpose: >
+  A simple SQLi machine
+
+description: >
+  <p class="lead">This is my superduper machine</p>
+
+#ls hometadata:
+#  scenario: >
+#    sample scenario
+#  instructions: >
+#    sample instructions
+#  solution: >
+#    sample solution
+#  pre_credits: >
+#    pre exploitation credits
+#  post_credits: >
+#    post exploitation credits
+#  pre_exploitation: >
+#    pre exploitation specific references and details
+#  post_exploitation: >
+#    post exploitation specific references and details

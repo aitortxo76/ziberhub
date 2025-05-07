@@ -4,3 +4,6 @@ network: "targets_waiting_room"
 TOKEN: "LM94LSVkqwe1GKL1-4DBU23c3xr6uYbJ"
 mui:
   URL: "{{MUI_URL|default('http://127.0.0.1:8080')}}"
+player_spin: 1
+headshot_spin: 1
+writeup_allowed: 1 # Allow writeups

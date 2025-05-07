@@ -8,4 +8,8 @@ player_spin=0
 healthcheck=0
 
 [targets]
-sanitycheck			ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
+sanitycheck			        ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
+unholy_union_player1  	name=unholy_union_player1 fqdn=unholy_union_player1 ansible_host=10.4.2.1 mac=02:42:0a:04:02:01 DYNAMIC_FLAG=mynewflag1 network="player_network1"
+unholy_union_player2  	name=unholy_union_player2 fqdn=unholy_union_player2 ansible_host=10.4.2.2 mac=02:42:0a:04:02:02 DYNAMIC_FLAG=mynewflag2 network="player_network2"
+unholy_union_player3  	name=unholy_union_player3 fqdn=unholy_union_player3 ansible_host=10.4.2.3 mac=02:42:0a:04:02:03 DYNAMIC_FLAG=mynewflag3 network="player_network3"
+
