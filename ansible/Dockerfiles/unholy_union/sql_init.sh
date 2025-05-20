@@ -49,5 +49,7 @@ FLUSH PRIVILEGES;
 
 EOF
 
+# Apagar MariaDB para que lo arranque supervisord en runtime
+mysqladmin shutdown
 
-/usr/bin/supervisord -c /etc/supervisord.conf
+echo "[+] Inicialización completada."
