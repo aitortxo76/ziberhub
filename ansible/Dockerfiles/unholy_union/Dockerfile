@@ -20,6 +20,7 @@ RUN set -ex \
     && service mariadb start \
     && cd /app \
     && npm i express request mysql2 \
-    && autoregister \
+    && apt-get install --no-install-recommends -y ansible \
+    && ansible-playbook -i 'localhost,' /tmp/autoregister.yml \
     && service mariadb stop \
     && rm -rf /usr/src/* /var/lib/apt/lists/* /tmp/* /usr/share/locale/* /usr/share/man/* /usr/share/doc/*
