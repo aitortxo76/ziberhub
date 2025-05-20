@@ -7,10 +7,10 @@ COPY src /app
 COPY *.yml *.sql /tmp/
 
 # Copy the sql file that updates the flag based on environment variables
-COPY mysql_init.sql /etc/
+# COPY mysql_init.sql /etc/
 
 # Copy the autorun script that updates the flag on the sql init file
-COPY autorun00.sh /ETS/
+# COPY autorun00.sh /ETS/
 
 COPY config/supervisord.conf /etc/supervisord.conf
 
