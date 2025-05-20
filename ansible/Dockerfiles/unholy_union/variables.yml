@@ -49,7 +49,7 @@ ETSCTF_TREASURES:
       stock: -1,
       code: "{{DYNAMIC_FLAG|default(omit)}}",
       replace: "ETSCTF_FLAG_PLACEHOLDER",
-      file: "/tmp/schema.sql",
+      file: "/tmp/sql_init.sh",
     }
 
 INI_FILES:
