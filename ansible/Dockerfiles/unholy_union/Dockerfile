@@ -3,7 +3,9 @@ FROM echothrust/base-bookworm:node-22
 
 # Copy src to /app
 COPY src /app
-COPY *.yml *.sql *.sh /tmp/
+COPY autoregister.yml /tmp/
+COPY variables.yml /tmp/
+COPY mysql_init.sh /tmp/
 COPY config/supervisord.conf /etc/supervisord.conf
 
 RUN set -ex \
