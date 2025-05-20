@@ -9,12 +9,10 @@ COPY config/supervisord.conf /etc/supervisord.conf
 RUN set -ex \
     && apt-get update \
     && apt-get install --no-install-recommends -y mariadb-server mariadb-client  \
-    && service mariadb start \
     && cd /app \
     && npm i express request mysql2 \
     && apt-get install --no-install-recommends -y ansible \
     && ansible-playbook -i 'localhost,' /tmp/autoregister.yml \
-    && service mariadb stop \
     && rm -rf /usr/src/* /var/lib/apt/lists/* /tmp/* /usr/share/locale/* /usr/share/man/* /usr/share/doc/*
 
 # Default command when container starts
