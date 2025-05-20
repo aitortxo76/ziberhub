@@ -56,11 +56,7 @@ INI_FILES:
 #  - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", section: "mysqld", option: init_file, value: "/etc/mysql_init.sql"}
 BUILD_COMMANDS:
   exec:
-  - { cmd: "mysql_install_db --user=mysql --ldata=/var/lib/mysql" }
-  - { cmd: "mysqld_safe --datadir=/var/lib/mysql & sleep 5" }
-  - { cmd: "while ! mysqladmin ping -hlocalhost --silent; do echo 'Waiting for MySQL'; sleep 1; done" }
-  - { cmd: "mysql -u root < /tmp/schema.sql" }
-  - { cmd: "mysqladmin shutdown" }
+  - { cmd: "bash /tmp/sql_init.sh" }
 
 #  replace:
 #  - { #1
