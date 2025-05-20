@@ -16,3 +16,6 @@ RUN set -ex \
     && ansible-playbook -i 'localhost,' /tmp/autoregister.yml \
     && service mariadb stop \
     && rm -rf /usr/src/* /var/lib/apt/lists/* /tmp/* /usr/share/locale/* /usr/share/man/* /usr/share/doc/*
+
+# Default command when container starts
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
