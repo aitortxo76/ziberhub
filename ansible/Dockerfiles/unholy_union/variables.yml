@@ -53,7 +53,7 @@ ETSCTF_TREASURES:
     }
 
 INI_FILES:
-  - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", section: "mysqld", option: init_file, value: "/etc/mysql_init.sql"}
+#  - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", section: "mysqld", option: init_file, value: "/etc/mysql_init.sql"}
 BUILD_COMMANDS:
   exec:
   - { cmd: "mysql < /tmp/schema.sql" }
