@@ -49,14 +49,14 @@ ETSCTF_TREASURES:
       stock: -1,
       code: "{{DYNAMIC_FLAG|default(omit)}}",
       replace: "ETSCTF_FLAG_PLACEHOLDER",
-      file: "/tmp/sql_init.sh",
+      file: "/tmp/mysql_init.sh",
     }
 
 INI_FILES:
 #  - { file: "/etc/mysql/mariadb.conf.d/50-server.cnf", section: "mysqld", option: init_file, value: "/etc/mysql_init.sql"}
 BUILD_COMMANDS:
   exec:
-  - { cmd: "bash /tmp/sql_init.sh" }
+  - { cmd: "bash /tmp/mysql_init.sh" }
 
 #  replace:
 #  - { #1
