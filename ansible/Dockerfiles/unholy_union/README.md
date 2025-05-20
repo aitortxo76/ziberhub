@@ -3,7 +3,7 @@ Unholy Union is a very easy web challenge designed to help players understand an
 Injection.
 
 ## Skill Required
-Basic knowledge of SQL
+Basic knowledge of SQL.
 
 ## Skills Learned
-Any special goals for the target.
+SQL injection.
