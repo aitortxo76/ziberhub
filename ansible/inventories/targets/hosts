@@ -1,5 +1,5 @@
 [targets:vars]
-DOCKER="10.4.0.1"
+DOCKER=10.4.0.1
 TargetOndemand=1
 DOCKER_REPOSITORY=demo
 writeup_allowed=0
@@ -8,8 +8,16 @@ player_spin=0
 healthcheck=0
 
 [targets]
-sanitycheck			        ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
-unholy_union_player1  	name=unholy_union_player1 fqdn=unholy_union_player1 ansible_host=10.4.2.1 mac=02:42:0a:04:02:01 DYNAMIC_FLAG=mynewflag1 network="player_network1"
-unholy_union_player2  	name=unholy_union_player2 fqdn=unholy_union_player2 ansible_host=10.4.2.2 mac=02:42:0a:04:02:02 DYNAMIC_FLAG=mynewflag2 network="player_network2"
-unholy_union_player3  	name=unholy_union_player3 fqdn=unholy_union_player3 ansible_host=10.4.2.3 mac=02:42:0a:04:02:03 DYNAMIC_FLAG=mynewflag3 network="player_network3"
+# sanitycheck ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
 
+# unholy_union_player1 ansible_host=10.4.2.1 mac=02:42:0a:04:02:01 DYNAMIC_FLAG=mynewflag1 network="player2" name="unholy_union_player1" fqdn="unholy_union_player1"
+
+# unholy_union_player2 ansible_host=10.4.2.2 mac=02:42:0a:04:02:02 DYNAMIC_FLAG=mynewflag2 network="player3" name="unholy_union_player2" fqdn="unholy_union_player2"
+
+#  gatecrash_player1 ansible_host=10.4.2.3 mac=02:42:0a:04:02:03 DYNAMIC_FLAG=mynewflag_35 network="player3" name="gatecrash_newr2" fqdn="gatecrash_newr2"
+
+#  gatecrash_player_A ansible_host=10.4.2.5 mac=02:42:0a:04:02:05 DYNAMIC_FLAG=mynewflag_AA network="player3" name="gatecrash_A" fqdn="gatecrash_A"
+
+# breaking_bank ansible_host=10.4.2.7 mac=02:42:0a:04:02:07 DYNAMIC_FLAG=goo_luck network="player3" name="breaking_bank" fqdn="breaking_bank"
+
+cyber_attack ansible_host=10.4.2.8 mac=02:42:0a:04:02:08 DYNAMIC_FLAG=cyber_attack_FLAG network="player3" name="cyber_attack" fqdn="cyber_attack"

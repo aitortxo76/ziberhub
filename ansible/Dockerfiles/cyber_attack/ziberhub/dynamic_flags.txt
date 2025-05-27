@@ -1,0 +1,6 @@
+unholy_union_player1 mynewflag1 
+unholy_union_player2 mynewflag2 
+gatecrash_player1 mynewflag_35
+gatecrash_player_A mynewflag_AA
+breaking_bank good_luck
+cyber_attack cyber_attack_FLAG

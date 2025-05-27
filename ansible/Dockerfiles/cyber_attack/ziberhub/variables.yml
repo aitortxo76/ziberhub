@@ -1,0 +1,60 @@
+---
+hostname: "{{inventory_hostname}}"
+fqdn: "{{inventory_hostname}}.ziberhub.eus"
+rootable: 0
+difficulty: 2
+container:
+  name: "{{inventory_hostname}}"
+  hostname: "{{fqdn}}"
+  build: "cyber_attack"
+  image: "{{inventory_hostname}}"
+  state: "started"
+  mac_address: "{{mac|default(omit)}}"
+  purge_networks: "yes"
+  tag: "v0.1"
+  dns_servers:
+    - "10.4.0.254"
+  env:
+    DYNAMIC_FLAG: "ETSCTF_{{DYNAMIC_FLAG|default(omit)}}"
+  networks:
+    - { name: AAnet, ipv4_address: "{{ansible_host}}" }
+  volumes: []
+CVE: []
+
+
+ETSCTF_FINDINGS:
+  - {
+      name: "Discovered target host {{fqdn}}/{{ansible_host}}",
+      pubname: "Discovered a target host",
+      points: 100,
+      stock: -1,
+      protocol: "icmp",
+      port: 0
+    }
+  - {
+      name: "Discovered a web service on target {{fqdn}}/{{ansible_host}}",
+      pubname: "Discovered a target host",
+      points: 100,
+      stock: -1,
+      protocol: "tcp",
+      port: 80
+    }
+
+ETSCTF_TREASURES:
+  - { #4
+      name: "Discovered flag",
+      pubname: "Discovered flag",
+      points: 20,
+      player_type: offense,
+      stock: -1,
+      code: "{{DYNAMIC_FLAG|default(omit)}}",
+      replace: "ETSCTF_FLAG_PLACEHOLDER",
+      file: "/flag.txt"
+    }
+
+purpose: >
+  The challenge involves a code injection vulnerability, through an SSRF caused by a handler confusion that happens in non-latest versions of Apache.
+
+
+description: >
+  Welcome, Brave Hero of Eldoria. You’ve entered a domain controlled by the forces of Malakar, the Dark Ruler of Eldoria. This is no place for the faint of heart. Proceed with caution. The systems here are heavily guarded, and one misstep could alert Malakar’s sentinels. But if you’re brave—or foolish—enough to exploit these defenses, you might just find a way to weaken his hold on this world. Choose your path carefully. Your actions here could bring hope to Eldoria… or doom us all. The shadows are watching. Make your move.
