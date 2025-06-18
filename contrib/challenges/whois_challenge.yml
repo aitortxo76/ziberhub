@@ -1,0 +1,42 @@
+---
+author: ziberhub_team
+name: "WHOIS tool challenge"
+category: reconnaissance
+difficulty: easy
+player_type: offense
+description: "<p>This challenge will guide you through the use of the <b>WHOIS</b> tool to gather information about a domain.
+<br> WHOIS is commonly used during the reconnaissance phase in ethical hacking to identify domain owners, registrar info, and important timestamps.</p>"
+questions:
+  - {
+       name: "Access WHOIS lookup",
+       description: "Start by using an online WHOIS lookup service like <code>https://whois.domaintools.com</code> or a terminal command like <code>whois example.com</code>.
+<br> Find the <b>registrar name</b> of the domain <code>tknika.eus</code> and enter it to complete this step.",
+       points: 10,
+       code: "Nominalia Internet S.L.",
+       weight: 0,
+    }
+  - {
+       name: "Find creation date",
+       description: "In a WHOIS response, one key piece of information is the creation date of a domain.
+<br> This can be used to verify the age and potential legitimacy of a domain.
+<br> Look up <code>tknika.eus</code> and find its creation date (format: YYYY-MM-DD). Enter it as the flag.",
+       points: 10,
+       code: "2014-11-25",
+       weight: 1,
+    }
+  - {
+         name: "Detect suspicious registrar",
+         description: "Some malicious actors use suspicious or uncommon registrars.
+<br> Identify and enter the <b>country</b> of the registrar used for the domain <code>tknika.eus</code>.",
+         points: 30,
+         code: "ES",
+         weight: 2,
+    }
+  - {
+         name: "Find contact email",
+         description: "The WHOIS record may include a contact email. This can be useful for identifying spoofing or phishing attempts.
+<br> Look up the domain <code>tknika.eus</code> and provide the contact email as the flag.",
+         points: 60,
+         code: "abuse@nominalia.eus",
+         weight: 3,
+      }
