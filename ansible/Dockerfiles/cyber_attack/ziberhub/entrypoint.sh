@@ -10,8 +10,7 @@ DYNAMIC_FLAG=$(grep "^$INVENTORY_HOSTNAME " /tmp/dynamic_flags.txt | awk '{print
 
 # 3. Verificación básica
 if [[ -z "$DYNAMIC_FLAG" ]]; then
-  echo "[ERROR] No se encontró DYNAMIC_FLAG para $INVENTORY_HOSTNAME en /tmp/dynamic_flags.txt" >> /tmp/entrypoint_error.log
-  env >> /tmp/entrypoint_error.log
+  echo "[ERROR] No se encontró DYNAMIC_FLAG para $INVENTORY_HOSTNAME en /tmp/dynamic_flags.txt"
   exit 1
 fi
 
@@ -24,4 +23,4 @@ ansible-playbook -i localhost, /tmp/autoregister.yml \
   -e DYNAMIC_FLAG="$DYNAMIC_FLAG"
 
 # 5. Ejecutar supervisord
-exec /usr/bin/supervisord -c /etc/supervisor/conf.d/supervisord.conf
+exec /usr/bin/supervisord -c /etc/supervisord.conf

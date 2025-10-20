@@ -8,16 +8,13 @@ player_spin=0
 healthcheck=0
 
 [targets]
-# sanitycheck ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
 
-# unholy_union_player1 ansible_host=10.4.2.1 mac=02:42:0a:04:02:01 DYNAMIC_FLAG=mynewflag1 network="player2" name="unholy_union_player1" fqdn="unholy_union_player1"
+sanitycheck ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
 
-# unholy_union_player2 ansible_host=10.4.2.2 mac=02:42:0a:04:02:02 DYNAMIC_FLAG=mynewflag2 network="player3" name="unholy_union_player2" fqdn="unholy_union_player2"
+# unholy_union ansible_host=10.4.2.1 mac=02:42:0a:04:02:01 DYNAMIC_FLAG=3f8c67b8a5d4b9b0891235c5bb5f4f36 network="web-network" name="unholy_union" fqdn="unholy_union"
 
-#  gatecrash_player1 ansible_host=10.4.2.3 mac=02:42:0a:04:02:03 DYNAMIC_FLAG=mynewflag_35 network="player3" name="gatecrash_newr2" fqdn="gatecrash_newr2"
+# gatecrash ansible_host=10.4.2.2 mac=02:42:0a:04:02:03 DYNAMIC_FLAG=b2c3a6cbe65e9e59db740be50a93e180 network="web-network" name="gatecrash" fqdn="gatecrash"
 
-#  gatecrash_player_A ansible_host=10.4.2.5 mac=02:42:0a:04:02:05 DYNAMIC_FLAG=mynewflag_AA network="player3" name="gatecrash_A" fqdn="gatecrash_A"
+# breaking_bank ansible_host=10.4.2.3 mac=02:42:0a:04:02:07 DYNAMIC_FLAG=84df4ad438fcf4818f4299e3fa83e24c network="web-network" name="breaking_bank" fqdn="breaking_bank"
 
-# breaking_bank ansible_host=10.4.2.7 mac=02:42:0a:04:02:07 DYNAMIC_FLAG=goo_luck network="player3" name="breaking_bank" fqdn="breaking_bank"
-
-cyber_attack ansible_host=10.4.2.8 mac=02:42:0a:04:02:08 DYNAMIC_FLAG=cyber_attack_FLAG network="player3" name="cyber_attack" fqdn="cyber_attack"
+# cyber_attack ansible_host=10.4.2.4 mac=02:42:0a:04:02:08 DYNAMIC_FLAG=27bfa2dd5e5a289f9625b1c93f8aef80 network="web-network" name="cyber_attack" fqdn="cyber_attack"

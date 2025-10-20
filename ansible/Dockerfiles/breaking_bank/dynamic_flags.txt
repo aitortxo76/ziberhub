@@ -1,7 +1,5 @@
 
-
-unholy_union_player1 mynewflag1 
-unholy_union_player2 mynewflag2 
-gatecrash_player1 mynewflag_35
-gatecrash_player_A mynewflag_AA
-breaking_bank good_luck
+unholy_union 3f8c67b8a5d4b9b0891235c5bb5f4f36
+gatecrash=b2c3a6cbe65e9e59db740be50a93e180
+breaking_bank a84df4ad438fcf4818f4299e3fa83e24c
+cyber_attack 27bfa2dd5e5a289f9625b1c93f8aef80
