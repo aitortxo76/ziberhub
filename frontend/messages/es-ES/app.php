@@ -401,6 +401,7 @@ return [
     'Too many password reset requests. Please wait and try again later.' => '',
     'Too many resend verification attempts. Please wait and try again.' => '',
     'Top countries by players' => '',
+    'Top players by points' => 'Clasificación general de participantes'
     'Tutorial ID' => '',
     'Tutorial Task Dependency ID' => '',
     'Tutorial Task ID' => '',
