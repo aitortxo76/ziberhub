@@ -211,7 +211,7 @@ return [
     'Network ID' => '',
     'Network details' => '',
     'Network targets' => '',
-    'Netwoorks' => 'RETOS',
+    'Networks' => 'RETOS',
     'Networks consist of multiple targets that are grouped together to represent more complicated setups or simply group a specific types of targets together.' => '',
     'New password saved but failed to auto sign-in.' => '',
     'New password saved.' => '',
