@@ -10,7 +10,7 @@ $this->loadLayoutOverrides = true;
 // Ejemplo de datos para la card (puedes reemplazar $pageStats con tus propios datos)
 
 $pageStats = (object)[
-    'totalTreasures' => 42,   // Total de flags disponibles
+    'totalTreasures' => 666,   // Total de flags disponibles
     'ownClaims'      => 7,    // Flags reclamadas por el usuario
     'totalFindings'  => 15,   // Total de servicios encontrados
     'ownFinds'       => 3,    // Servicios encontrados por el usuario
@@ -38,6 +38,7 @@ $pageStats = (object)[
               </div>',
         ]); Card::end(); ?>
       </div>
+
       <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
             <?php Card::begin([
                 'header'=>'header-icon',
