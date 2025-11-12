@@ -1,0 +1,57 @@
+---
+hostname: "{{inventory_hostname}}"
+fqdn: "{{inventory_hostname}}.ziberhub.eus"
+rootable: 0
+difficulty: 2
+container:
+  name: "{{inventory_hostname}}"
+  hostname: "{{fqdn}}"
+  build: "HTB-proxy"
+  image: "{{inventory_hostname}}"
+  state: "started"
+  mac_address: "{{mac|default(omit)}}"
+  purge_networks: "yes"
+  tag: "v0.1"
+  dns_servers:
+    - "10.4.0.254"
+  networks:
+    - { name: AAnet, ipv4_address: "{{ansible_host}}" }
+  volumes: []
+CVE: []
+
+
+ETSCTF_FINDINGS:
+  - {
+      name: "Discovered target host {{fqdn}}/{{ansible_host}}",
+      pubname: "Discovered a target host",
+      points: 100,
+      stock: -1,
+      protocol: "icmp",
+      port: 0
+    }
+  - {
+      name: "Discovered a web service on target {{fqdn}}/{{ansible_host}}",
+      pubname: "Discovered a target host",
+      points: 100,
+      stock: -1,
+      protocol: "tcp",
+      port: 80
+    }
+
+ETSCTF_TREASURES:
+  - { #0
+      name: "Got checked for sanity and passed on <b><code>{{hostname}}</code></b>",
+      pubname: "Got checked for sanity and passed on <b><code>{{hostname}}</code></b>",
+      points: 100,
+      player_type: offense,
+      stock: -1,
+      category: "web",
+      code: "ZHB{mi_primera_bandera}",
+      fullpath: "/flag.txt"
+    }
+
+purpose: >
+  A simple SQLi machine
+
+description: >
+  <p class="lead">This is my superduper machine</p>

@@ -20,7 +20,7 @@ WORKDIR /var/www/html
 COPY src/ /var/www/html/
 
 # Copy Supervisor configuration
-COPY supervisor/supervisord.conf /etc/supervisor/conf.d/supervisord.conf
+COPY supervisor/supervisord.conf /etc/supervisor/supervisord.conf
 
 # Copy Apache configuration
 COPY apache/apache2.conf /etc/apache2/conf-available/servername.conf
@@ -31,16 +31,9 @@ RUN mv /var/www/html/cgi-bin/ /usr/lib/ && chmod -R +x /usr/lib/cgi-bin/
 
 # Copy ziberhub
 COPY ziberhub/flag.txt /flag.txt
-COPY ziberhub/autoregister.yml /tmp/autoregister.yml
-COPY ziberhub/variables.yml /tmp/variables.yml
-COPY ziberhub/dynamic_flags.txt /tmp/dynamic_flags.txt
-COPY ziberhub/entrypoint.sh /entrypoint.sh
-
-
-RUN chmod +x /entrypoint.sh
 
 # Expose port 80 for Apache
-# EXPOSE 80
+EXPOSE 80
 
 # Command to run entry script
-CMD ["/entrypoint.sh"]
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisor/supervisord.conf"]

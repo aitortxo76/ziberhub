@@ -47,8 +47,7 @@ ETSCTF_TREASURES:
       points: 20,
       player_type: offense,
       stock: -1,
-      code: "{{DYNAMIC_FLAG|default(omit)}}",
-      replace: "ETSCTF_FLAG_PLACEHOLDER",
+      code: "aitortxo8",
       file: "/flag.txt"
     }
 

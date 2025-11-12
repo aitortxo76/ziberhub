@@ -3,7 +3,7 @@ const fs = require('fs');
 let io; 
 let isBotRunning = false; 
 let browser; // Keep the browser instance
-const flag = fs.readFileSync('/flag.txt', 'utf8');
+const flag = fs.readFileSync('flag.txt', 'utf8');
 
 // Initialize the browser once when the application starts
 browser = puppeteer.launch({

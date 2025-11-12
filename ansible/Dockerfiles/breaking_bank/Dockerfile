@@ -32,13 +32,7 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 
 # Add readflag binary or any other necessary file
 COPY flag.txt /flag.txt
-COPY entrypoint.sh /entrypoint.sh
-COPY dynamic_flags.txt /tmp/dynamic_flags.txt
-COPY autoregister.yml /tmp/autoregister.yml
-COPY variables.yml /tmp/variables.yml
 
-# Make entrypoint executable
-RUN chmod +x /entrypoint.sh
 
-# CMD
-CMD ["/entrypoint.sh"]
+# Command to run the application
+CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]

@@ -14,8 +14,7 @@ COPY config/nginx.conf /etc/nginx/nginx.conf
 # Copy challenge files
 COPY challenge /www
 #COPY flag.txt /
-COPY init.sh /init.sh
-RUN chmod +x /init.sh
+COPY flag.txt /
 
 # Setup permissions
 RUN chown -R www:www /var/lib/nginx
@@ -26,4 +25,4 @@ EXPOSE 1337
 
 # Start supervisord
 #CMD ["/usr/bin/supervisord", "-c", "/etc/supervisord.conf"]
-CMD ["/bin/sh", "-c", "/init.sh && /usr/bin/supervisord -c /etc/supervisord.conf"]
+CMD ["/bin/sh", "-c", "/usr/bin/supervisord -c /etc/supervisord.conf"]

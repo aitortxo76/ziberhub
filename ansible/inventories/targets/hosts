@@ -9,12 +9,26 @@ healthcheck=0
 
 [targets]
 
-sanitycheck ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
+# flag-command ansible_host=10.4.2.87 mac=02:42:0a:04:02:87 network="very-easy-network" name="flag-command" fqdn="flag-command"
 
-# unholy_union ansible_host=10.4.2.1 mac=02:42:0a:04:02:01 DYNAMIC_FLAG=3f8c67b8a5d4b9b0891235c5bb5f4f36 network="web-network" name="unholy_union" fqdn="unholy_union"
+# ghost ansible_host=10.4.2.107 mac=02:42:0a:04:02:107 network="medium-network" name="ghost" fqdn="ghost"
+nexus-void ansible_host=10.4.2.117 mac=02:42:0a:04:02:117 network="medium-network" name="nexus-void" fqdn="nexus-void"
 
-# gatecrash ansible_host=10.4.2.2 mac=02:42:0a:04:02:03 DYNAMIC_FLAG=b2c3a6cbe65e9e59db740be50a93e180 network="web-network" name="gatecrash" fqdn="gatecrash"
 
-# breaking_bank ansible_host=10.4.2.3 mac=02:42:0a:04:02:07 DYNAMIC_FLAG=84df4ad438fcf4818f4299e3fa83e24c network="web-network" name="breaking_bank" fqdn="breaking_bank"
+# void_whispers ansible_host=10.4.2.99 mac=02:42:0a:04:02:88 network="web-network" name="void_whispers" fqdn="void_whispers"
 
-# cyber_attack ansible_host=10.4.2.4 mac=02:42:0a:04:02:08 DYNAMIC_FLAG=27bfa2dd5e5a289f9625b1c93f8aef80 network="web-network" name="cyber_attack" fqdn="cyber_attack"
+# unholy_union ansible_host=10.4.2.1 mac=02:42:0a:04:02:01 DYNAMIC_FLAG=b2c3a6cbe65e9e59db740be50a93e180 network="web-network" name="unholy_union" fqdn="unholy_union"
+
+# time-korp ansible_host=10.4.2.77 mac=02:42:0a:04:02:77 network="very-easy-network" name="time-korp" fqdn="time-korp"
+
+# waywitch ansible_host=10.4.2.5 mac=02:42:0a:04:02:09 network="web-network" name="waywitch" fqdn="waywitch"
+
+# phanton_script ansible_host=10.4.2.66 mac=02:42:0a:04:02:17 network="very-easy-network" name="phanton_script" fqdn="phanton_script"
+
+# sanitycheck ansible_host=10.4.2.0 mac=02:42:0a:00:06:0a
+
+# gatecrash ansible_host=10.4.2.2 mac=02:42:0a:04:02:03 DYNAMIC_FLAG=b2c3a6cbe65e9e59db740be50a93e180 network="easy-network" name="gatecrash" fqdn="gatecrash"
+
+# breaking_bank ansible_host=10.4.2.3 mac=02:42:0a:04:02:07 network="medium-network" name="breaking_bank" fqdn="breaking_bank"
+
+# cyber_attack ansible_host=10.4.2.4 mac=02:42:0a:04:02:08 network="easy-network" name="cyber_attack" fqdn="cyber_attack"
