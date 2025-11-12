@@ -6,7 +6,7 @@ $cookieValidationKey = require __DIR__ . '/validationKey.php';
 
 $config = [
   'id' => 'pui2',
-  //'language' => 'el-GR',
+  'language' => 'es-ES',
   'sourceLanguage' => 'en-US',
   'name' => 'echoCTF.RED Mycenae',
   'basePath' => dirname(__DIR__),
