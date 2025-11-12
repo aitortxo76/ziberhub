@@ -11,9 +11,9 @@ if($module->checkNetwork($model)!==false)
   $subscribe="<p>".Html::a(\Yii::t('app','Go to Network'),
       Url::to(['/network/default/view','id'=>$model->id]),
       [
-        'title' => \Yii::t('app','Go to network'),
+        'title' => \Yii::t('app','Go'),
         'class'=>'btn btn-primary text-dark font-weight-bold orbitron',
-        'aria-label'=>\Yii::t('app','Go to network'),
+        'aria-label'=>\Yii::t('app','Go'),
         'data-pjax' => '0',
       ]
   )."</p>";
