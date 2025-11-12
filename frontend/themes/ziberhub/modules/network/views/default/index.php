@@ -8,9 +8,15 @@ $this->_description = $this->title;
 $this->loadLayoutOverrides = true;
 
 // Ejemplo de datos para la card (puedes reemplazar $pageStats con tus propios datos)
+
 $pageStats = (object)[
-    'totalTreasures' => 42,
-    'ownClaims' => 7,
+    'totalTreasures' => 42,   // Total de flags disponibles
+    'ownClaims'      => 7,    // Flags reclamadas por el usuario
+    'totalFindings'  => 15,   // Total de servicios encontrados
+    'ownFinds'       => 3,    // Servicios encontrados por el usuario
+    'totalHeadshots' => 9,    // Total de headshots
+    'ownHeadshots'   => 2,    // Headshots del usuario
+    'totalPoints'    => 12345 // Total de puntos globales
 ];
 ?>
 <div class="network-index">
@@ -32,7 +38,50 @@ $pageStats = (object)[
               </div>',
         ]); Card::end(); ?>
       </div>
+      <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+            <?php Card::begin([
+                'header'=>'header-icon',
+                'type'=>'card-stats',
+                'icon'=>'<i class="fas fa-fingerprint"></i>',
+                'color'=>'warning',
+                'title'=>$pageStats->totalFindings,
+                'subtitle'=>\Yii::t('app','Services'),
+                'footer'=>'<div class="stats">
+                        <i class="material-icons text-danger">track_changes</i> '.$pageStats->ownFinds.' '.\Yii::t('app','services found by you').'
+                      </div>',
+            ]);Card::end();?>
+        </div>
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+            <?php Card::begin([
+                'header'=>'header-icon',
+                'type'=>'card-stats',
+                'icon'=>'<i class="fa fa-skull"></i>',
+                'color'=>'danger',
+                'title'=>$pageStats->totalHeadshots,
+                'subtitle'=>\Yii::t('app','Headshots'),
+                'footer'=>'<div class="stats">
+                        <i class="material-icons text-danger">memory</i> '.$pageStats->ownHeadshots.' '.\Yii::t('app','headshots by you').'
+                      </div>',
+            ]);Card::end();?>
+        </div>
+
+        <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6">
+            <?php Card::begin([
+                'header'=>'header-icon',
+                'type'=>'card-stats',
+                'icon'=>'<i class="fas fa-medal"></i>',
+                'color'=>'info',
+                'title'=>number_format($pageStats->totalPoints),
+                'subtitle'=>\Yii::t('app','Points'),
+                'footer'=>'<div class="stats">
+                        <i class="material-icons text-danger">format_list_numbered</i> '.number_format(Yii::$app->user->identity->playerScore->points).' '.\Yii::t('app','yours').'
+                      </div>',
+            ]);Card::end();?>
+        </div>
+
     </div>
+
+
     <!-- 🔹 Fin card superior -->
 
     <h2><?= Html::encode($this->title) ?></h2>
