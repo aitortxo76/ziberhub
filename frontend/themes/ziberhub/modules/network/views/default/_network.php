@@ -8,7 +8,7 @@ $subscribe=null;
 $module = \app\modules\network\Module::getInstance();
 if($module->checkNetwork($model)!==false)
 {
-  $subscribe="<p>".Html::a(\Yii::t('app','Go to Network'),
+  $subscribe="<p>".Html::a(\Yii::t('app','Go'),
       Url::to(['/network/default/view','id'=>$model->id]),
       [
         'title' => \Yii::t('app','Go'),
