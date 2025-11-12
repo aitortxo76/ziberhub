@@ -212,7 +212,7 @@ return [
     'Network details' => '',
     'Network targets' => '',
     'Networks' => 'RETOS',
-    'Networks consist of multiple targets that are grouped together to represent more complicated setups or simply group a specific types of targets together.' => '',
+    'Networks consist of multiple targets that are grouped together to represent more complicated setups or simply group a specific types of targets together.' => 'Explora redes de retos organizadas por nivel de dificultad: empieza fácil, aprende rápido y supera tus límites.',
     'New password saved but failed to auto sign-in.' => '',
     'New password saved.' => '',
     'No FAQ entries exist at the moment...' => '',
