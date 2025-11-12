@@ -40,7 +40,7 @@ if(array_key_exists('subscription',Yii::$app->modules)!==false && $model->inProd
       <img class="img" src="<?=$model->icon?>" height="80vw"/>
     </div>
     <div class="card-body table-responsive">
-      <h7 class="orbitron"><?=Html::a($model->name ,
+      <h4 class="orbitron"><?=Html::a($model->name ,
                   Url::to(['/network/default/view', 'id'=>$model->id]),
                   [
                     'style'=>'float: bottom;',
@@ -48,7 +48,7 @@ if(array_key_exists('subscription',Yii::$app->modules)!==false && $model->inProd
                     'aria-label'=>\Yii::t('app','View network details'),
                     'data-pjax' => '0',
                   ]
-              );?></h7>
+              );?></h4>
               <h6 class="badge badge-primary orbitron"><?=\Yii::t('app','{targetsCount,plural,=0{no targets} =1{# target} other{# targets}}',['targetsCount'=>$model->targetsCount])?></h6>
       <p style="text-align: justify;" ><?=$model->description?></p>
   </div>
