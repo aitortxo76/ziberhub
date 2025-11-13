@@ -12,15 +12,6 @@ use yii\data\ActiveDataProvider;
 use app\overloads\yii\filters\AccessControl;
 use yii\helpers\ArrayHelper;
 
-/* =========================
- * ADDED: imports para stats
- * ========================= */
-use app\modules\target\models\Treasure;      // ADDED
-use app\modules\target\models\Finding;       // ADDED
-use app\modules\game\models\Headshot;        // ADDED
-use app\models\PlayerTreasure;               // ADDED
-use app\models\PlayerFinding;                // ADDED
-
 /**
  * DefaultController implements the CRUD actions for Network model.
  */
@@ -79,45 +70,10 @@ class DefaultController extends \app\components\BaseController
       'query' => Network::find()->active()->forMe()->orderBy(['weight' => SORT_ASC, 'name' => SORT_ASC, 'id' => SORT_ASC]),
     ]);
 
-    /* ======================================================
-     * ADDED: construir $pageStats igual que en Targets
-     * ====================================================== */
-    // Total de puntos (mismo SQL que en Target/DefaultController@actionIndex)
-    $cmd = Yii::$app->db->createCommand(
-      'SELECT (SELECT IFNULL(SUM(points),0) FROM finding)
-            + (SELECT IFNULL(SUM(points),0) FROM treasure)
-            + (SELECT IFNULL(SUM(points),0) FROM badge)
-            + (SELECT IFNULL(SUM(points),0) FROM question WHERE player_type=:ptype)'
-    );
-    $cmd->bindValue(':ptype', 'offense');
-
-    $pageStats = new \stdClass();
-    $pageStats->totalPoints    = (int) $cmd->queryScalar();
-    $pageStats->totalTreasures = (int) Treasure::find()->count();
-    $pageStats->totalFindings  = (int) Finding::find()->count();
-    $pageStats->totalClaims    = (int) PlayerTreasure::find()->count();
-    $pageStats->totalHeadshots = (int) Headshot::find()->count();
-
-    if (Yii::$app->user->isGuest) {
-      $pageStats->ownClaims    = 0;
-      $pageStats->ownFinds     = 0;
-      $pageStats->ownHeadshots = 0;
-    } else {
-      $uid = (int) Yii::$app->user->id;
-      $pageStats->ownClaims    = (int) PlayerTreasure::find()->where(['player_id' => $uid])->count();
-      $pageStats->ownFinds     = (int) PlayerFinding::find()->where(['player_id' => $uid])->count();
-      $pageStats->ownHeadshots = (int) Headshot::find()->where(['player_id' => $uid])->count();
-    }
-    /* =========================
-     * /ADDED
-     * ========================= */
-
     return $this->render('index', [
       'dataProvider' => $dataProvider,
-      'pageStats'    => $pageStats,   // ADDED: pasar stats a la vista
     ]);
   }
-
   /**
    * View Network model by id.
    * @return mixed
@@ -199,7 +155,6 @@ class DefaultController extends \app\components\BaseController
       'model' => $network,
     ]);
   }
-
   protected function findModel(int $id)
   {
     if (($model = Network::findOne(['id' => $id])) !== null && ($model->active || (!\Yii::$app->user->isGuest && \Yii::$app->user->identity->isAdmin))) {

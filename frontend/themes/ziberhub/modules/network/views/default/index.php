@@ -9,15 +9,7 @@ $this->loadLayoutOverrides = true;
 
 // Ejemplo de datos para la card (puedes reemplazar $pageStats con tus propios datos)
 
-$pageStats = (object)[
-    'totalTreasures' => 666,   // Total de flags disponibles
-    'ownClaims'      => 7,    // Flags reclamadas por el usuario
-    'totalFindings'  => 15,   // Total de servicios encontrados
-    'ownFinds'       => 3,    // Servicios encontrados por el usuario
-    'totalHeadshots' => 9,    // Total de headshots
-    'ownHeadshots'   => 2,    // Headshots del usuario
-    'totalPoints'    => 12345 // Total de puntos globales
-];
+
 ?>
 <div class="network-index">
   <div class="body-content">
