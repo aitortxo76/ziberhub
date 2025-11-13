@@ -26,4 +26,7 @@ use yii\helpers\Url;
     <div class="sidebar-wrapper">
         <?=$menu?>
     </div>
+    <div>
+        <img src="/images/ZIBERH4B.png" width="200px"/>
+          </div>
 </div>
