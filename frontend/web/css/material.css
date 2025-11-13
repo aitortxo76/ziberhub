@@ -178,7 +178,7 @@ details summary>b:hover {
 .watermarked {
   height: 105px;
   /*width: 1200px;*/
-  background-image: url(/images/ZIBERH4B.png);
+ /* background-image: url(/images/ZIBERH4B.png);*/
   background-size: 30rem;
   background-position: 100% 0;
   background-repeat: no-repeat;
